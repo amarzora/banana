@@ -78,6 +78,7 @@ class MoviesControllers extends Controller
     public function enregistrer(Request $request)
     {
 
+        // commentaire
         $titre = $request->title;
         $description = $request->description;
         $synopsis = $request->synopsis;
