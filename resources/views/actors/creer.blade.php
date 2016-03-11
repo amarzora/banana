@@ -4,6 +4,8 @@
 
     </head>
     <body>
+
+
     <h3>Créer des acteurs</h3>
     <form method="post" action="{{ route('actors_enregistrer') }}">
 
@@ -27,5 +29,15 @@
 
         <button type="submit">Créer un acteur</button>
     </form>
+
+    @if(count($errors->all()))
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     </body>
 </html>

@@ -14,6 +14,7 @@ heriter de ma classe Controller
 use App\Actors;
 
 
+use App\Http\Requests\ActorsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -51,7 +52,7 @@ public function lister(){
         return view("actors/creer");
     }
 
-    public function enregistrer(Request $request)
+    public function enregistrer(ActorsRequest $request)
     {
 
         $firstname = $request->firstanme;

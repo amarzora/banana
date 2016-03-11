@@ -11,6 +11,7 @@ heriter de ma classe Controller
 */
 
 
+use App\Http\Requests\MoviesRequest;
 use App\Movies;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -75,7 +76,7 @@ class MoviesControllers extends Controller
         return view("movies/creer");
     }
 
-    public function enregistrer(Request $request)
+    public function enregistrer(MoviesRequest $request)
     {
 
         // commentaire
@@ -84,14 +85,15 @@ class MoviesControllers extends Controller
         $synopsis = $request->synopsis;
         $budget = $request->budget;
         $annee = $request->annee;
+        $language =$request->language;
 
         $movies = new Movies();
         $movies->title = $titre;
         $movies->description = $description;
         $movies->synopsis = $synopsis;
-        $movies->budget = $synopsis;
+        $movies->budget = $budget;
         $movies->annee = $annee;
-
+        $movies->language =$language;
         $movies->save();
 
         return Redirect::route('movies_lister');

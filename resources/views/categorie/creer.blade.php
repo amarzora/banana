@@ -9,7 +9,11 @@
         {{--chaamps caché--}}
         {{ csrf_field() }}
         <label for="title">Titre</label>
-        <input name="title" id="title" />
+
+
+        <!--old sert à recuperer ancien valeur-->
+
+        <input vulue = "{{old('title')}} name="title" id="title" />
 
         <label for="description">Description</label>
         <textarea id="description" name="description"></textarea>
