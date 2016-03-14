@@ -6,7 +6,12 @@
     <body>
 
 
-    <h3>Créer des acteurs</h3>
+
+
+
+    <button type="button" class="btn btn-rounded btn-primary btn-block">Créer un acteur</button>
+
+
     <form method="post" action="{{ route('actors_enregistrer') }}">
 
         {{ csrf_field() }}

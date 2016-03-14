@@ -29,7 +29,7 @@ class MoviesControllers extends Controller
 
         // Récuperer tous mes films
         $movies = Movies::all();
-        dump($movies);
+       // dump($movies);
 
 // retourner une vue
         // transporte mes films pour ma vue

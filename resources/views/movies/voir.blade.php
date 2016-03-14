@@ -1,10 +1,8 @@
+@extends('layout')
 
-<html>
-    <head>
 
-    </head>
-    <body>
+@section('content')
+
     <h3>Voir titre du film est {{$movies->title}}</h3>
     <h4>Voir date de sortie est : {{$movies->date_release}}</h4>
-    </body>
-</html>
+ @endsection

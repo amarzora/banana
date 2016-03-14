@@ -55,6 +55,7 @@ Route::group(['prefix' => 'movies'],function() {
     ]);
 
     Route::get('/creer', [
+        'as'=> 'movies_creer',
         'uses' => 'MoviesControllers@creer'
     ]);
 
@@ -142,8 +143,8 @@ Route::group(['prefix' => 'categorie'],function() {
 
 Route::group(['prefix'=> 'actors'],function() {
 
-    Route::get('/voir', [
-
+    Route::get('/voir/{id}', [
+        'as' => 'actors_voir',
         'uses' => 'ActorsControllers@voir'
     ]);
 
@@ -155,6 +156,7 @@ Route::group(['prefix'=> 'actors'],function() {
 
 
     Route::get('/creer', [
+        'as' => 'actors_creer',
         'uses' => 'ActorsControllers@creer'
     ]);
 

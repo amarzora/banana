@@ -1,21 +1,39 @@
+@extends('layout')
 
-<html>
-    <head>
 
-    </head>
-    <body>
+@section('content')
+
+
+    <table class="table table-bordered mbn">
+        <thead>
+         <tr>
+            <th>IMAGE</th>
+            <th>PRENOM</th>
+            <th>NOM</th>
+            <th>VILLE</th>
+            <th>BIOGRAPHIE</th>
+
+
+         </tr>
+        </thead>
+
+        <tbody>
+
     <h3>Listes des acteurs</h3>
     @foreach($actors as $actor)
-        <h2>Nom :{{ $actor->firstname }}  - Prenom :{{ $actor->lastname }}</h2>
-        <h2></h2>
-        <p>Biographie :{{ $actor->biography }}</p>
-        <h3>Ville : {{$actor->city}}</h3>
-        <h4><img src="{{$actor->image}}"></h4>
+        <tr>
+            <td><img img style="width :50px; height: auto" src="{{$actor->image}}"></td>
+            <td>{{ $actor->firstname }}</td>
+            <td>{{ $actor->lastname }}</td>
+            <td>{{$actor->city}}</td>
+            <td>{{ $actor->biography }}</td>
 
 
 
-
+        </tr>
     @endforeach
 
-    </body>
-</html>
+        </tbody>
+    </table>
+
+    @endsection

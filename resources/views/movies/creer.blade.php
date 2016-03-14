@@ -1,24 +1,25 @@
-
-<html>
-    <head>
-
-    </head>
-    <body>
-    <h3>creer de nos films</h3>
+@extends('layout')
 
 
-        <form method="post" action="{{route('movies_enregistrer')}}" >
+@section('content')
+
+
+
+
+<div class="col-md-8">
+    <form method="post" action="{{route('movies_enregistrer')}}" >
 
             {{csrf_field()}}
 
             <div class = "form-group">
                 <label for = "title">Titre</label>
-                <input name ="title" id="title" >
+                <input name ="title" id="title" class ="form-control" placeholder="title" type="text" >
             </div>
 
             <div class = "form-group">
                 <label for ="synopsis">Synopsis</label>
-                <input name= "synopsis" id="synopsis">
+                <textarea id="synopsis" class ="form-control" rows="3">
+                    </textarea>
             </div>
             <div class = "form-group">
                  <label for="budget">Budget</label>
@@ -69,6 +70,5 @@
             </ul>
         </div>
     @endif
-
-    </body>
-</html>
+</div>
+@endsection
