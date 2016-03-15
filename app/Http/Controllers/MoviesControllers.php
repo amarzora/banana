@@ -59,13 +59,18 @@ class MoviesControllers extends Controller
     public function  editer($id)
     {
 
-        //var_dump($variable) <=> dump()
-        // deboger mon id
+        /*
+         * // deboger mon id
+         * var_dump($variable) <=> dump()
+         */
+
+
+
+
+       // dump($id);
+        //$prenom = 'zora';
+
         $movies = Movies::find($id);
-
-        dump($id);
-        $prenom = 'zora';
-
         return view("movies/editer", ['id' => $id, 'movies=>$movies']);
     }
 
@@ -126,6 +131,9 @@ class MoviesControllers extends Controller
         return Redirect::route('movies_lister');
 
     }
+
+
+
 
 
 

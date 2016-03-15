@@ -14,9 +14,12 @@
 Route::group(['middleware' => ['web']], function () {
 
 
-Route::get('/',['as'=>'static_welcome', function () {
-    return view('static/welcome');
-}]);
+
+
+Route::get('/',[
+    'as'=> 'homepage',
+    'uses' => 'HomeControllers@homepage'
+]);
 /*
  * Page Contact
  * contact=>URI (bout de l'ul)
@@ -161,8 +164,14 @@ Route::group(['prefix'=> 'actors'],function() {
     ]);
 
 
-    Route::get('/editer', [
+    Route::get('/editer/{id}', [
+        'as' => 'actors_editer',
         'uses' => 'ActorsControllers@editer'
+    ]);
+
+    Route::get('/supprimer/{id}',[
+        'as' => 'actors_supprimer',
+        'uses' => 'ActorsControllers@supprimer'
     ]);
 
 });
@@ -176,7 +185,7 @@ Route::group(['prefix'=> 'actors'],function() {
 Route::group(['prefix'=> 'directors'],function() {
 
     Route::get('/voir/{$id}', [
-
+        'as'=>'directors_voir',
         'uses' => 'DirectorsControllers@voir'
     ]);
 
@@ -188,17 +197,23 @@ Route::group(['prefix'=> 'directors'],function() {
 
 
     Route::get('/creer', [
+        'as' => 'directors_creer',
         'uses' => 'DirectorsControllers@creer'
     ]);
 
 
-    Route::get('/editer', [
+    Route::get('/editer/{id}', [
+        'as' => 'directors_editer',
         'uses' => 'DirectorsControllers@editer'
     ]);
 
     Route::post('/enregistrer', [
-        'as' =>'actors_enregistrer',
-        'uses' => 'ActorsControllers@enregistrer'
+        'as' =>'directors_enregistrer',
+        'uses' => 'DirectorsControllers@enregistrer'
+    ]);
+    Route::get('/supprimer/{id}',[
+        'as' => 'dirctors_supprimer',
+        'uses' => 'DirectorsControllers@supprimer'
     ]);
 
 });

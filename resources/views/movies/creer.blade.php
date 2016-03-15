@@ -11,6 +11,15 @@
 
             {{csrf_field()}}
 
+
+        <select class="form-control">
+            <label for="BO">BO</label>
+            <option>Select BO</option>
+            <option>Vo</option>
+            <option>Vost</option>
+            <option>Vostfr</option>
+        </select>
+
             <div class = "form-group">
                 <label for = "title">Titre</label>
                 <input name ="title" id="title" class ="form-control" placeholder="title" type="text" >
@@ -23,39 +32,56 @@
             </div>
             <div class = "form-group">
                  <label for="budget">Budget</label>
-                 <input name="budget" id="budget">
-
+                 <input name="budget" id="budget" class ="form-control">
+            </div>
             <div class = "form-group">
                  <label for="annee">Année</label>
-                 <input name="annee" id="annee">
+                 <input name="annee" id="annee" class ="form-control">
             </div>
+        <div class = "form-group">
+            <label for="duree">Durée</label>
+            <input name="duree" id="duree" class ="form-control">
+        </div>
+        <div class = "form-group">
+            <label for="created_at">Date de création</label>
+            <input name="created_at" id="created_at"class ="form-control">
+        </div>
 
+
+        <div class = "form-group">
+            <label for="date_release">Date de realisation</label>
+            <input name="date_release" id="date_release"class ="form-control">
+        </div>
+        <div class = "form-group">
+            <label for ="description">Description</label>
+                <textarea id="description" rows="3" class ="form-control">
+                    </textarea>
+        </div>
             <div class = "form-group">
                  <label for="cover">Couverture</label>
-                 <input name="cover" id = "cover">
+                 <input name="cover" id = "cover"class ="form-control">
             </div>
 
-            <div class = "form-group">
-                <label for="language">Langue : </label>
-                 <input type="radio" name="language"  id = "language" value="fr"> fr
-                 <input type="radio" name="language" id = "language" value="en"> en
-                 <input type="radio" name="language" id = "language" value="es"> es
+            <div class = "form-group" >
+                <label for="language">Langue   :    </label>
+                <label class="radio-inline mr10" >
+                    <input type="radio" name="language"  id = "language" value="fr"> FR
+                </label>
+                <label class="radio-inline mr10">
+                     <input type="radio" name="language" id = "language" value="en"> EN
+                </label>
+                <label class="radio-inline mr10">
+                    <input type="radio" name="language" id = "language" value="es"> ES
+                </label>
+
+
+
+
             </div>
-
-            <label for = "description">Description</label>
-            <textarea id="description" name="description"></textarea>
-
-            <select name ="BO">
-            <label for="BO">BO</label>
-            <option>Select BO</option>
-            <option>Vo</option>
-            <option>Vost</option>
-            <option>Vostfr</option>
-            </select>
-
+    <div>
             <button type="submit">Créer un film</button>
 
-
+    </div>
 
 
         </form>

@@ -1,58 +1,83 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-                <ul>
-
-                    <li><a href="{{ route('static_welcome') }}">HOME</a> </li>
-
-                    <li><a href="{{ route('movies_lister') }}">Film</a></li>
-                    <li><a href="{{ route('categorie_lister') }}">Categorie</a> </li>
-                    <li><a href="{{ route('actors_lister') }}">Acteurs</a> </li>
-                    <li><a href="{{ route('directors_lister') }}">Realisateurs</a> </li>
+@extends('layout')
 
 
-                </ul>
+@section('content')
+
+    <h3><i classe = "fa fa -dashboard"></i>Dashboard</h3>
+    <hr />
+
+<div class = "col-md-3">
+    <div class="panel panel-tile text-center">
+        <div class="panel-body bg-success light">
+            <i class="fa fa-film text-muted fs70 mt10"></i>
+            <h1 class="fs35 mbn">{{$nbFilm}} sur {{$nbFilmT}}</h1>
+            <h6 class="text-white">Nb films actifs</h6>
+        </div>
+        <div class="panel-footer bg-success br-n p12">
+    <span class="fs11">
+      <i class="fa fa-arrow-up pr5"></i>
+      <b> 3% UNIQUES 1D AGO</b>
+    </span>
+        </div>
+    </div>
+
+</div>
 
 
+
+<div class = "col-md-3">
+    <div class="panel panel-tile text-center">
+        <div class="panel-body bg-info light">
+            <i class="fa fa-twitter text-muted fs70 mt10"></i>
+            <h1 class="fs35 mbn">{{$nbActorsF}} sur {{$nbActors}}</h1>
+            <h6 class="text-white">NB Acteurs français</h6>
+        </div>
+        <div class="panel-footer bg-info br-n p12">
+    <span class="fs11">
+      <i class="fa fa-arrow-up pr5"></i>
+      <b> 3% UNIQUES 1D AGO</b>
+    </span>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<div class = "col-md-3">
+
+    <div class="panel panel-tile text-center">
+        <div class="panel-body bg-primary light">
+            <i class="fa fa-twitter text-muted fs70 mt10"></i>
+            <h1 class="fs35 mbn">{{$moyAge}}</h1>
+            <h6 class="text-white">MOYENNE D'AGE</h6>
+        </div>
+        <div class="panel-footer bg-primary br-n p12">
+    <span class="fs11">
+      <i class="fa fa-arrow-up pr5"></i>
+      <b> 3% UNIQUES 1D AGO</b>
+    </span>
+        </div>
+    </div>
+
+</div>
+
+    <div class = "col-md-3">
+        <div class="panel panel-tile text-center">
+            <div class="panel-body bg-success light">
+                <i class="fa fa-twitter text-muted fs70 mt10"></i>
+                <h1 class="fs35 mbn">18,020</h1>
+                <h6 class="text-white">NB CONVERSIONS</h6>
+            </div>
+            <div class="panel-footer bg-success br-n p12">
+    <span class="fs11">
+      <i class="fa fa-arrow-up pr5"></i>
+      <b> 3% UNIQUES 1D AGO</b>
+    </span>
             </div>
         </div>
-    </body>
-</html>
+
+    </div>
+
+ @endsection

@@ -21,7 +21,7 @@
         <link rel="shortcut icon" href="{{ asset ('assets/img/favicon.ico') }}">
 
       <!---main sur public/css -->
-        <link href="{{ 'css/main.css' }} ">
+        <link href="{{asset( 'css/main.css') }} " rel="stylesheet">
 
 
 
@@ -1107,9 +1107,9 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="accordion-toggle" href="#">
-                            <span class="glyphicon glyphicon-check"></span>
-                            <span class="sidebar-title">Admin Forms</span>
+                        <a class="accordion-toggle" href="{{route("directors_lister")}}">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="sidebar-title">Réalisateurs</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="nav sub-nav">

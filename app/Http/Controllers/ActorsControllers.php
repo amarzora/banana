@@ -29,7 +29,7 @@ class ActorsControllers extends Controller{
 
 public function lister(){
     $actors = Actors::all();
-    dump($actors);
+    //dump($actors);
     // retourner une vue
     return view("actors/list",[
         "actors"=>$actors

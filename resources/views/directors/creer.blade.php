@@ -10,7 +10,7 @@
     <button type="button" class="btn btn-rounded btn-primary btn-block">Créer un acteur</button>
 
 
-    <form method="post" action="{{ route('actors_enregistrer') }}">
+    <form method="post" action="{{ route('directors_enregistrer') }}">
 
         {{ csrf_field() }}
         <label for="biography">Biographie</label>
@@ -30,7 +30,7 @@
 
 
 
-        <button type="submit">Créer un acteur</button>
+        <button type="submit">Créer un réalisateur</button>
     </form>
 
     @if(count($errors->all()))
