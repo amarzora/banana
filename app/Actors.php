@@ -32,7 +32,9 @@ class Actors extends Model
         $moyAge = DB::table('actors')
         ->avg(DB::raw ('TIMESTAMPDIFF(YEAR,dob,NOW())'));
 
-        return $moyAge;
+        return ROUND($moyAge);
 
     }
+
+
 }

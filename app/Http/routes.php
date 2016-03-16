@@ -219,6 +219,52 @@ Route::group(['prefix'=> 'directors'],function() {
 });
 
 
+
+// sessions
+
+    Route::group(['prefix' => 'sessions'],function() {
+        Route::get('/voir/{id}', [
+            'uses' => 'SessionsControllers@voir'
+        ]);
+
+
+        Route::get('/lister', [
+            'as'=>'sessions_lister',
+            'uses' => 'CategoriesControllers@lister'
+        ]);
+
+
+        Route::get('/creer', [
+            'as'=>'sessions_creer',
+            'uses' => 'SessionsControllers@creer'
+        ]);
+
+
+
+        Route::post('/enregistrer', [
+            'as'=>'sessions_enregistrer',
+            'uses' => 'SessionsControllers@enregistrer'
+        ]);
+
+        /*
+         * * Argument qui s'appelle id en URL
+         * Argument {id}
+         */
+
+        Route::get('/editer/{id}', [
+            'uses' => 'SessionsControllers@editer'
+        ]);
+
+        Route::get('/supprimer/{id}',[
+
+            'as' => 'sessions_supprimer',
+            'uses' => 'SessionsControllers@supprimer'
+        ]);
+
+
+    });
+
+
 /*
  * Page a propos
  */
