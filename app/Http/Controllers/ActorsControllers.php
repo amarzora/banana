@@ -27,10 +27,33 @@ class ActorsControllers extends Controller{
      * <=> Action de controller
      */
 
-public function lister(){
+    public function favoris(Request $request,$id)
+    {
+        $actor = Actors::find($id);
+
+
+        $tab = $request->session()->get('id_actors', []);
+
+        if(array_key_exists($id,$tab)){
+            unset($tab[$id]);
+        }else {
+            $tab[$id] = $actor->lastname . "  " . $actor->firstname;
+        }
+
+        $request->session()->put('id_actors', $tab);
+
+        return Redirect::route('actors_lister');
+
+
+    }
+
+
+public function lister(Request $request){
     $actors = Actors::all();
     //dump($actors);
     // retourner une vue
+
+    $id_actors = $request->session()->get('id_actors');
     return view("actors/list",[
         "actors"=>$actors
     ]);

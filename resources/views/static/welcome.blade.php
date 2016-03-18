@@ -154,7 +154,7 @@
                     <span class="panel-icon">
                       <i class="fa fa-users"></i>
                     </span>
-                <span class="panel-title"> Recent User Activity</span>
+                <span class="panel-title"> Les derniers utilisateurs connectés</span>
             </div>
             <div class="panel-menu">
                 <div class="input-group ">
@@ -165,195 +165,24 @@
                 </div>
             </div>
             <div class="panel-body panel-scroller pn" style="max-height: 513px;">
+
                 <div class="row">
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/1.jpg" class="user-avatar">
+                    @foreach($profilUser as $value)
+
+                     <div class = "col-md-3 user"  >
+
+                        <img src="{{$value->avatar}}" class="user-avatar users">
                         <div class="caption">
-                            <h5>Mike Pavlov
+                            <h5>{{$value->username}}
                                 <br>
-                                <small> Designer</small>
+                                <small> {{$value->ville}}</small>
                             </h5>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/2.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/3.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/4.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt15">
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/5.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/6.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/1.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/2.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt15">
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/3.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/4.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/5.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/6.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt15">
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/1.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/2.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/3.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/4.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt15">
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/5.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/6.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/1.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/avatars/2.jpg" class="user-avatar">
-                        <div class="caption">
-                            <h5>Mike Pavlov
-                                <br>
-                                <small> Designer</small>
-                            </h5>
-                        </div>
-                    </div>
+
+
+
+                   </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -381,16 +210,16 @@
         <div class="panel-body ptn pbn p10">
             <ol class="timeline-list">
 
-                @foreach($titleCinema as $value)
+                @foreach($nextCinema as $value)
                 <li class="timeline-item">
                     <div class="timeline-icon bg-dark light">
                         <span class="fa fa-tags"></span>
                     </div>
                     <div class="timeline-desc">
-                        <b>{{$value->title}}</b> Added to his store:
-                        <a href="#">Ipod</a>
+                        <b>{{$value->title}} </b>
+                        <a href="#">{{$value->ville}}</a>
                     </div>
-                    <div class="timeline-date">1:25am</div>
+                    <div class="timeline-date">{{$value->date_session}}</div>
                 </li>
                 @endforeach
 

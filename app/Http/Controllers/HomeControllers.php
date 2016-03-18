@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use App\Actors;
 use App\Movies;
 use App\Sessions;
+use App\User;
 
 class HomeControllers extends Controller{
     public function homepage(){
@@ -29,7 +30,10 @@ class HomeControllers extends Controller{
         $moyAge = $actor->moyAgeActors();
 
         $session = new Sessions();
-        $titleCinema = $session->NomCinema();
+        $nextCinema = $session->NomCinema();
+
+        $user = new User();
+        $profilUser = $user->affiche();
 
       /*  $cinema = Sessions::find(1)->cinema;*/
 
@@ -44,7 +48,9 @@ class HomeControllers extends Controller{
                 'moyDF' => $moyDF,
                 'fLn' =>$fLn,
                 'note' => $note,
-                'titleCinema' => $titleCinema
+              'nextCinema' => $nextCinema,
+                'profilUser' =>$profilUser,
+
 
 
             ]);

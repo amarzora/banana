@@ -9,9 +9,9 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Database\Eloquent\Model;
 
-class SessionsControllers extends Model
+
+class SessionsControllers extends Controller
 {
 
 }

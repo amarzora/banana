@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class Sessions extends Model
 {
-    protected $table = "movies";
+    protected $table = "sessions";
 
 
     public function NomCinema()
@@ -28,14 +28,13 @@ class Sessions extends Model
        *LIMIT 10
          */
 
-        $titleCinema = DB::table('sessions')
-            ->join('cinema', 'cinema.id', '=', 'sessions.cinema_id')
-            ->select('sessions.id', 'cinema.title')
-            ->select('sessions.id','cinema.ville')
-            ->select('sessions.id','sessions.date_session')
-            ->get();
-        return $titleCinema;
+        $nextCinema = DB::table('sessions')
 
+
+            ->join('cinema', 'cinema.id', '=', 'sessions.cinema_id')
+            ->select( 'cinema.title','cinema.ville','date_session')
+            ->get();
+        return $nextCinema;
 
     }
     /*

@@ -51,6 +51,22 @@ Route::get('/apropos', function(){
 
 Route::group(['prefix' => 'movies'],function() {
 
+    Route::get('/vider',[
+        'as' => 'movies_vider',
+        'uses' => 'MoviesControllers@vider'
+    ]);
+
+    //Route panier
+    Route::get('/panier/{id}',[
+        'as' => 'movies_panier',
+        'uses' => 'MoviesControllers@panier'
+    ]);
+
+    Route::get('/supr/{id}',[
+        'as' => 'movies_supr',
+        'uses' => 'MoviesControllers@supr'
+    ]);
+
 
     Route::get('/lister', [
         'as' =>'movies_lister',
@@ -146,6 +162,12 @@ Route::group(['prefix' => 'categorie'],function() {
 
 Route::group(['prefix'=> 'actors'],function() {
 
+    Route::get('/favoris/{id}',[
+        'as' => 'actors_favoris',
+        'uses' => 'ActorsControllers@favoris'
+    ]);
+
+
     Route::get('/voir/{id}', [
         'as' => 'actors_voir',
         'uses' => 'ActorsControllers@voir'
@@ -230,7 +252,7 @@ Route::group(['prefix'=> 'directors'],function() {
 
         Route::get('/lister', [
             'as'=>'sessions_lister',
-            'uses' => 'CategoriesControllers@lister'
+            'uses' => 'SessionsControllers@lister'
         ]);
 
 
@@ -264,6 +286,50 @@ Route::group(['prefix'=> 'directors'],function() {
 
     });
 
+
+    // cinema
+
+    Route::group(['prefix' => 'cinema'],function() {
+        Route::get('/voir/{id}', [
+            'uses' => 'CinemaControllers@voir'
+        ]);
+
+
+        Route::get('/lister', [
+            'as'=>'cinema_lister',
+            'uses' => 'CategoriesControllers@lister'
+        ]);
+
+
+        Route::get('/creer', [
+            'as'=>'cinema_creer',
+            'uses' => 'CinemaControllers@creer'
+        ]);
+
+
+
+        Route::post('/enregistrer', [
+            'as'=>'cinema_enregistrer',
+            'uses' => 'CinemaControllers@enregistrer'
+        ]);
+
+        /*
+         * * Argument qui s'appelle id en URL
+         * Argument {id}
+         */
+
+        Route::get('/editer/{id}', [
+            'uses' => 'CinemaControllers@editer'
+        ]);
+
+        Route::get('/supprimer/{id}',[
+
+            'as' => 'cinema_supprimer',
+            'uses' => 'CinemaControllers@supprimer'
+        ]);
+
+
+    });
 
 /*
  * Page a propos

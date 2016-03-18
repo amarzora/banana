@@ -2,3 +2,14 @@ h1{
     font-size: 60px;
 
 }
+.user-avatar.users {
+    max-width: 100px;
+    height: 100px;
+}
+
+.col-md-3.user{
+
+max-width: 120px;
+height: 159px;
+
+}

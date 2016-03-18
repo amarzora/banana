@@ -7,6 +7,7 @@
     <table class="table table-bordered mbn">
         <thead>
          <tr>
+             <th>Favoris</th>
             <th>IMAGE</th>
             <th>PRENOM</th>
             <th>NOM</th>
@@ -25,6 +26,14 @@
 
     @foreach($actors as $actor)
         <tr>
+            <td><a href="{{ route("actors_favoris",['id' => $actor ]) }}">
+                    @if(!array_key_exists($actor->id,session('id_actors',[])))
+                       <i class = 'fa fa-heart'></i>
+                    @else
+                            <i class = 'fa fa-heart-o'></i>
+                    @endif
+                    </a>
+                </td>
             <td><img style="width :50px; height: auto" src="{{$actor->image}}"></td>
             <td>{{ $actor->firstname }}</td>
             <td>{{ $actor->lastname }}</td>

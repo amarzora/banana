@@ -24,11 +24,84 @@ class MoviesControllers extends Controller
      * <=> Action de controller
      */
 
-    public function lister()
+    public function panier(Request $request,$id){
+    $movie = Movies::find($id);
+
+        //dd($movie);
+        // 1. energistrer en session l'id
+        // Requette gait appel à la session
+        //a base d'une clef : 'id_movie'
+        ////et d'une valeur : $id
+
+        // get( je recupere en session mon tableau
+        //par sa clef 'id_movies'
+        //si mon tavbleau n'existe pasen session
+        //j'initialise un tableau vide
+
+        $tab = $request->session()->get('id_movies', []);
+
+        if(array_key_exists($id,$tab)){
+            unset($tab[$id]);
+        }else{
+            $tab[$id]= $movie->title;
+        }
+
+        // put ajoute un id dans mon tableau de movies
+
+        $request->session()->put('id_movies',$tab);
+
+
+
+
+        //2. eneregister en sessioin l'id
+        return Redirect::route('movies_lister');
+
+        //3. redicréer la liste des film
+
+
+}
+
+
+    public function vider(Request $request){
+//
+
+
+        $request->session()->forget('id_movies');
+
+
+        return Redirect::route('movies_lister');
+
+
+    }
+
+    public function supr(Request $request, $id){
+
+        $tab = $request->session()->get('id_movies', []);
+
+        unset($tab[$id]);
+
+
+         $request->session()->put('id_movies', $tab);
+
+        return Redirect::route('movies_lister');
+    }
+
+
+
+
+
+    public function lister(Request $request)
     {
 
-        // Récuperer tous mes films
         $movies = Movies::all();
+
+        //$request->session() accéder à la qession
+        //get() est une fonction pour recuperer des données
+        // a partir de la clef mis en session
+        $id_movies = $request->session()->get('id_movies');
+       // dump($id_movies);
+        // Récuperer tous mes films
+
        // dump($movies);
 
 // retourner une vue
@@ -106,7 +179,7 @@ class MoviesControllers extends Controller
 
     }
 
-    public function  supprimer($id)
+   public function  supprimer($id)
     {
         $movies = Movies::find($id);
         $movies->delete();
@@ -115,6 +188,12 @@ class MoviesControllers extends Controller
 
 
     }
+
+
+
+
+
+
 
     public function visible($id)
     {

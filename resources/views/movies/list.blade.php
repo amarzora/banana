@@ -13,6 +13,7 @@
     <table class="table table-bordered mbn">
         <thead>
             <tr>
+                <th>Like</th>
                 <th>IMAGE</th>
                 <th>TITRE</th>
                 <th>SYNOPSIS</th>
@@ -31,12 +32,20 @@
         @foreach($movies as $movie)
 
             <tr>
+                <td><a href="{{ route("movies_panier",['id' => $movie->id ])}}">
+                     @if(!array_key_exists($movie->id,session('id_movies',[])))
+                     <i class = 'fa fa-heart'></i>
+                    @else
+                            <i class = 'fa fa-heart-o'></i>
+                    @endif
+                    </a>
+                </td>
                 <td><img style="width :50px; height: auto" src="{{ $movie->image }}" /></td>
                 <td><a href="{{ route("movies_voir",["id" => $movie->id]) }}"> {{$movie->title}}</a> </td>
-                <td>{!!str_limit(strip_tags( $movie->synopsis),$limit = 250, $end = '...')!!}</td>
+                <td>{!!str_limit(strip_tags( $movie->synopsis),$limit = 100, $end = '...')!!}</td>
                 <td>{!! $movie->created_at!!}</td>
                 <td>{!! $movie->date_release!!}</td>
-                <td>{!!str_limit(strip_tags( $movie->description),$limit = 250, $end = '...')!!}</td>
+                <td>{!!str_limit(strip_tags( $movie->description),$limit = 100, $end = '...')!!}</td>
                 <td>{!! $movie->duree!!}</td>
                 <td>{!! $movie->note_presse!!}</td>
 
